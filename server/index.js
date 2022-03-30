@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 
 import { port, dbConfig } from './config.js';
 
+import authRoute from './routes/v1/auth.js';
+
 const app = express();
 
 app.use(cors());
@@ -16,6 +18,8 @@ try {
 } catch (error) {
   throw new Error(error);
 }
+
+app.use('/api/v1/auth', authRoute);
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
