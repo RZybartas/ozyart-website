@@ -6,23 +6,36 @@ import { port, dbConfig } from './config.js';
 
 import authRoute from './routes/v1/auth.js';
 import usersRoute from './routes/v1/users.js';
+import productsRoute from './routes/v1/products.js';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-//Connecting to mongo
-try {
-  await mongoose.connect(dbConfig);
-  console.log('DB connection successfully');
-} catch (error) {
-  throw new Error(error);
-}
+const main = async () => {
+  try {
+    //Connecting to mongo
+    await mongoose.connect(dbConfig);
+    console.log('DB connection successfully');
 
-app.use('/api/v1/auth', authRoute);
-app.use('/api/v1/users', usersRoute);
+    //All routes
+    app.use('/api/v1/auth', authRoute);
+    app.use('/api/v1/users', usersRoute);
+    app.use('/api/v1/products', productsRoute);
 
-app.listen(port, () => {
-  console.log(`Server running on port: ${port}`);
-});
+    //Page not found
+    app.get('*', (req, res) => {
+      res.status(404).send('Page not found');
+    });
+
+    // start a server on 'port'
+    app.listen(port, () => {
+      console.log(`Server running on port: ${port}`);
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+main();
