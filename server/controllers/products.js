@@ -40,7 +40,6 @@ export const createProduct = async (req, res) => {
 };
 
 //Update product
-
 export const updateProduct = async (req, res) => {
   try {
     const updated = await Products.findByIdAndUpdate(
