@@ -1,0 +1,26 @@
+//Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+$Dynalight: 'Dynalight', cursive;
+$lobster-font: 'Lobster', cursive;
+
+//Colors
+
+$primary: #fbfbfb;
+$secondary: #110f9e;
+$dark: #1f1d1c;
+
+//Mixins
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

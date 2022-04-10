@@ -1,0 +1,47 @@
+.sidebar {
+  width: 100%;
+
+  height: calc(100vh - 5em);
+  background-color: $primary;
+  position: sticky;
+  border-right: 1px solid lighten($color: $dark, $amount: 50);
+
+  &__title {
+    color: lighten($color: $dark, $amount: 50);
+    @include flex-center;
+    padding-top: 0.8em;
+  }
+
+  &__list-item {
+    color: $secondary;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5em;
+    font-size: 1.3em;
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      color: $secondary;
+      cursor: pointer;
+
+      .icons {
+        width: 0.8em;
+        margin-right: 5px;
+      }
+    }
+  }
+  &__button {
+    background-color: transparent;
+    border: none;
+    color: $secondary;
+    padding: 0.3em;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5em;
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+}

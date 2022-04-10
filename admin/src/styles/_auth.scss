@@ -1,0 +1,52 @@
+.auth {
+  @include flex-center();
+  background-color: $primary;
+  flex-direction: column;
+  width: 100%;
+  height: 90vh;
+
+  &__title {
+    font-size: 28px;
+    color: $secondary;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    min-width: 250px;
+    flex-direction: column;
+    @include flex-center();
+  }
+
+  &__input {
+    text-align: center;
+    color: $dark;
+    border: 0;
+    border-bottom: 1px solid $primary;
+    font-size: 16px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+    transition: border-bottom 0.3s ease;
+
+    &:focus {
+      border-bottom: 1px solid $dark;
+      outline: none;
+    }
+  }
+
+  &__btn {
+    background-color: $secondary;
+    color: $primary;
+    font-size: 18px;
+    width: 100%;
+    border: 0;
+    padding: 5px;
+    margin: 20px 0;
+    cursor: pointer;
+  }
+
+  &__link {
+    font-size: 20px;
+    color: $secondary;
+  }
+}

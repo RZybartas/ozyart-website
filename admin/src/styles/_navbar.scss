@@ -1,0 +1,35 @@
+.navbar {
+  background-color: $primary;
+  height: 4em;
+  width: 100%;
+  border-bottom: 1px solid lighten($color: $dark, $amount: 50);
+
+  &__wrapper {
+    max-width: 90em;
+    margin: 0 auto;
+    height: 100%;
+    @include flex-between;
+  }
+
+  &__left {
+    margin-left: 40px;
+  }
+
+  &__logo {
+    color: $secondary;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: $lobster-font;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 40px;
+  }
+  &__avatar {
+    color: $secondary;
+    font-size: 1.5em;
+  }
+}
