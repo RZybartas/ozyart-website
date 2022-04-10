@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 //Route get all users
-router.get('/', verifyTokenAndAdmin, getAllUsers);
+router.get('/', getAllUsers);
 //Route find user by id
 router.get('/find/:id', verifyTokenAndAdmin, getUser);
 //Route update user
