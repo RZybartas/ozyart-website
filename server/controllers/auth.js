@@ -35,6 +35,7 @@ export const Register = async (req, res) => {
       res.status(201).json({
         id: user.id,
         token: generateToken(user.id),
+        username: user.username,
       });
     } else {
       res.status(400);
@@ -63,9 +64,10 @@ export const Login = async (req, res) => {
       await bcrypt.compare(password, user.password);
     }
 
-    return res.json({
+    return res.status(200).json({
       id: user.id,
       token: generateToken(user._id),
+      username: user.username,
     });
   } catch (error) {
     res.status(401).send({ error: error.message });
