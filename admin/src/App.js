@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Dashboard } from './pages/Dashboard';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { Users } from './pages/Users';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
           <Route path='/' element={<Dashboard />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/users' element={<Users />} />
         </Routes>
       </Router>
     </>
