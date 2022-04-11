@@ -1,0 +1,29 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5em;
+  width: 100%;
+}
+
+.not-found-btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 10em;
+
+  button {
+    font-size: 1.2em;
+    background-color: $secondary;
+    color: $primary;
+    border: none;
+    border-radius: 0.2em;
+    padding: 0.3em 0.8em;
+  }
+}
+
+.not-found-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  color: $secondary;
+}
