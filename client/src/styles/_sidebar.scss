@@ -1,0 +1,54 @@
+.nav-container {
+  position: absolute;
+  width: 3em;
+  height: 100vh;
+  right: 1em;
+}
+
+.ul {
+  margin-top: 20em;
+  @include flex-center;
+  flex-direction: column;
+
+  &__li {
+    list-style-type: none;
+    margin: 10px auto;
+
+    a {
+      font-size: 10px;
+      color: $dark;
+      font-weight: bolder;
+      text-decoration: none;
+      cursor: pointer;
+
+      .circle {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        background-color: $dark;
+        margin-top: 2em;
+        color: $primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          width: 2.5em;
+          height: 2.5em;
+          border-radius: 50%;
+        }
+
+        p {
+          font-size: 1.2em;
+
+          &:hover {
+            font-size: 2.5em;
+          }
+        }
+      }
+    }
+  }
+  .social-container {
+    margin-top: 15em;
+  }
+}
