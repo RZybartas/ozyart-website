@@ -1,0 +1,32 @@
+.left {
+  height: calc(100vh - 120px);
+  position: absolute;
+
+  .img-1 {
+    width: 27em;
+    position: absolute;
+    right: -20em;
+    bottom: 0;
+    z-index: 1;
+  }
+  .img-2 {
+    position: sticky;
+    margin-top: 0;
+    width: 34em;
+    height: auto;
+    z-index: 1;
+  }
+
+  .paragraph {
+    padding: 1em;
+    color: $dark;
+    font-family: $lobster-font;
+    font-size: 1.2em;
+    width: 22em;
+    z-index: 1;
+    p,
+    li {
+      padding: 0.3em;
+    }
+  }
+}

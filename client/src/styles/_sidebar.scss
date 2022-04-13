@@ -1,12 +1,12 @@
 .nav-container {
   position: absolute;
   width: 3em;
-  height: 100vh;
+  height: 80vh;
   right: 1em;
 }
 
 .ul {
-  margin-top: 20em;
+  padding-top: 15em;
   @include flex-center;
   flex-direction: column;
 
@@ -49,6 +49,6 @@
     }
   }
   .social-container {
-    margin-top: 15em;
+    margin-top: 16em;
   }
 }

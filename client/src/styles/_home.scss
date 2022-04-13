@@ -1,0 +1,33 @@
+.home {
+  max-width: 100em;
+  height: calc(100vh - 120px);
+  margin: 0 auto;
+
+  // &__title {
+  //   display: flex;
+  //   flex-direction: column;
+  //   position: absolute;
+  //   right: 2em;
+  //   top: 2em;
+  //   font-size: 5em;
+  //   color: $dark;
+  //   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  //   span {
+  //     font-family: $Dynalight;
+  //     font-size: 1em;
+  //     margin-left: 2em;
+  //   }
+  // }
+
+  &__circle {
+    position: absolute;
+    top: 5em;
+    right: 45%;
+    width: 50em;
+    height: 50em;
+    border: 1px solid $dark;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
