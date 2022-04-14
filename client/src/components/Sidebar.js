@@ -4,6 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 export const Sidebar = () => {
   return (
+    // navigation in app
     <nav className='nav-container'>
       <ul className='ul'>
         <li className='ul__li'>
@@ -34,7 +35,7 @@ export const Sidebar = () => {
             </div>
           </Link>
         </li>
-
+        {/* Social media icons */}
         <div className='social-container'>
           <li className='ul__li'>
             <a href='https://www.instagram.com/oksefokse/'>

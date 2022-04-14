@@ -1,19 +1,28 @@
 .nav-container {
   position: absolute;
-  width: 3em;
-  height: 80vh;
+  width: 1em;
   right: 1em;
+  margin: 0.3em;
+
+  @include breakpoint(phablet) {
+    height: 60vh;
+  }
 }
 
 .ul {
-  padding-top: 15em;
+  padding-top: 17em;
   @include flex-center;
   flex-direction: column;
+  @include breakpoint(laptop) {
+    padding-top: 18em;
+  }
+  @include breakpoint(desktop) {
+    padding-top: 18em;
+  }
 
   &__li {
     list-style-type: none;
     margin: 10px auto;
-
     a {
       font-size: 10px;
       color: $dark;
@@ -28,27 +37,46 @@
         background-color: $dark;
         margin-top: 2em;
         color: $primary;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
+        @include breakpoint(desktop) {
+          width: 2em;
+          height: 2em;
+        }
 
         &:hover {
           width: 2.5em;
           height: 2.5em;
           border-radius: 50%;
+          color: $white;
+          @include flex-center;
+          @include breakpoint(desktop) {
+            width: 3em;
+            height: 3em;
+          }
         }
 
         p {
           font-size: 1.2em;
 
           &:hover {
-            font-size: 2.5em;
+            font-size: 1.5px;
           }
         }
       }
     }
   }
   .social-container {
-    margin-top: 16em;
+    margin-top: 8em;
+    @include breakpoint(phablet) {
+      margin-top: 12em;
+      margin-right: 1em;
+    }
+
+    @include breakpoint(laptop) {
+      margin-top: 7em;
+    }
+    @include breakpoint(desktop) {
+      margin-top: 19em;
+    }
   }
 }

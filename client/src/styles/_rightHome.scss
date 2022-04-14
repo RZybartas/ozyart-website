@@ -1,0 +1,72 @@
+.right {
+  // background-color: aqua;
+  width: 50%;
+  height: 100%;
+
+  &__title {
+    width: 13em;
+    margin-right: 0.1em;
+    position: relative;
+    top: 0.5em;
+    right: 4.1em;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5em;
+    color: $dark;
+    font-family: $lobster-font;
+    @include breakpoint(phablet) {
+      font-size: 3.5em;
+      top: 0;
+    }
+    @include breakpoint(laptop) {
+      font-size: 5em;
+      right: 1.8em;
+    }
+    @include breakpoint(desktop) {
+      font-size: 7em;
+    }
+
+    span {
+      font-family: $Dynalight;
+      font-size: 0.9em;
+      margin-left: 5.3em;
+      @include breakpoint(laptop) {
+        font-size: 1.2em;
+        margin-left: 2em;
+      }
+    }
+  }
+  .paragraph {
+    color: $dark;
+    font-family: $lobster-font;
+    font-size: 0.9em;
+    float: right;
+    margin-right: 4em;
+    margin-top: 20em;
+    width: 19em;
+    height: 20%;
+
+    @include breakpoint(phablet) {
+      width: 32em;
+      height: 20%;
+      margin: 27em 5em 0 0;
+    }
+
+    @include breakpoint(laptop) {
+      margin-top: 5em;
+      width: 29em;
+    }
+    @include breakpoint(desktop) {
+      width: 35em;
+      font-size: 1.5em;
+
+      margin-right: 3em;
+      margin-top: 5em;
+    }
+
+    p,
+    li {
+      padding: 0.3em;
+    }
+  }
+}
