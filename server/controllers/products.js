@@ -2,11 +2,13 @@ import Products from '../models/products.js';
 
 //Get all products
 export const getProducts = async (req, res) => {
+  const options = {
+    limit: parseInt(req.query.limit, 10) || 10,
+    page: parseInt(req.query.page, 10) || 1,
+    sort: { createdAt: -1, updatedAt: -1 },
+  };
   try {
-    const products = await Products.find().sort({
-      createdAt: -1,
-      updatedAt: -1,
-    });
+    const products = await Products.paginate({}, options);
     res.status(200).json(products);
   } catch (error) {
     res.status(400).send({ error: error.message });
