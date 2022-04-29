@@ -11,10 +11,12 @@
 
 .ul {
   padding-top: 17em;
+  position: fixed;
   @include flex-center;
   flex-direction: column;
   @include breakpoint(laptop) {
     padding-top: 18em;
+    position: static;
   }
   @include breakpoint(desktop) {
     padding-top: 18em;

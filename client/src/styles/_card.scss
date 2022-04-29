@@ -1,0 +1,60 @@
+.card {
+  height: 26em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+
+  box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.75);
+
+  @include breakpoint(tablet) {
+    max-width: 20em;
+  }
+  @include breakpoint(laptop) {
+    max-width: 20em;
+  }
+  @include breakpoint(desktop) {
+    grid-template-columns: repeat(auto-fit, minmax(28em, 1fr));
+  }
+
+  &__image {
+    position: relative;
+    width: 18em;
+    max-height: 22em;
+    overflow: hidden;
+    margin: auto;
+    .blink {
+      background-color: red;
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      font-size: 1em;
+      font-weight: 600;
+      color: $white;
+      padding: 2px;
+      animation: blink 2s linear infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    img {
+      width: 18em;
+      object-fit: contain;
+    }
+  }
+  .footer__title {
+    font-size: 1.5em;
+    font-family: $lobster-font;
+    color: $dark;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.2em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

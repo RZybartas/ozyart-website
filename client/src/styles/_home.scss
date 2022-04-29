@@ -3,7 +3,6 @@
   flex-direction: row;
   max-width: 23em;
   margin: 0 auto;
-  height: calc(100vh - 7.5em);
 
   @include breakpoint(phablet) {
     max-width: 37.5em;

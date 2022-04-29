@@ -1,0 +1,22 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20em;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 5em;
+  height: 5em;
+  border: 0.6em solid lighten($color: $primary, $amount: 15);
+  border-top: 0.6em solid $dark;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}

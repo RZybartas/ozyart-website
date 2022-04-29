@@ -24,13 +24,19 @@
   .not-found-title {
     display: flex;
     justify-content: center;
-    font-size: 4em;
+    font-size: 2em;
     color: $dark;
+    @include breakpoint(phablet) {
+      font-size: 4em;
+    }
   }
   .not-found-paragraph {
     display: flex;
     justify-content: center;
-    font-size: 4em;
+    font-size: 2em;
     color: $dark;
+    @include breakpoint(phablet) {
+      font-size: 4em;
+    }
   }
 }

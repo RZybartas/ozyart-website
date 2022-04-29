@@ -8,10 +8,10 @@ $lobster-font: 'Lobster', cursive;
 
 //Colors
 
-$primary: #c4c4c4;
+$primary: rgb(196, 196, 196);
 
-$dark: #877e76;
-$white: #f5f5f5;
+$dark: rgb(135, 126, 118);
+$white: rgb(245, 245, 245);
 
 //Mixins
 @mixin flex-center() {
@@ -29,11 +29,15 @@ $white: #f5f5f5;
 //Breakpoints
 @mixin breakpoint($point) {
   @if $point == desktop {
-    @media (min-width: 120em) {
+    @media (min-width: 121em) {
       @content;
     }
   } @else if $point == laptop {
     @media (min-width: 80em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
       @content;
     }
   } @else if $point == phablet {
