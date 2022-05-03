@@ -5,11 +5,14 @@
 
 @import './sidebar';
 @import './header';
-@import './home';
 @import './leftHome';
 @import './rightHome';
-@import './notFound';
-@import './products';
 @import './spinner';
 @import './card';
+
+//Pages
+@import './home';
+@import './notFound';
+@import './products';
 @import './product';
+@import './about';

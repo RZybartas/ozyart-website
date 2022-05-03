@@ -1,0 +1,104 @@
+.about {
+  &__title {
+    color: $dark;
+    font-family: $roboto;
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  &__container {
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 20em;
+    @include breakpoint(phablet) {
+      max-width: 34em;
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include breakpoint(laptop) {
+      max-width: 70em;
+    }
+    @include breakpoint(desktop) {
+    }
+  }
+  &__left {
+    width: 16em;
+    display: grid;
+    grid-template-rows: repeat(3, 20em);
+    gap: 1em;
+    @include breakpoint(phablet) {
+      grid-template-columns: 15em;
+    }
+
+    @include breakpoint(laptop) {
+      width: 35em;
+      grid-template-columns: 30em;
+      grid-template-rows: repeat(3, 32em);
+      align-items: center;
+    }
+    @include breakpoint(desktop) {
+    }
+
+    img {
+      width: 16em;
+      align-self: center;
+      @include breakpoint(laptop) {
+        justify-self: center;
+        width: 22em;
+      }
+    }
+    p {
+      color: $dark;
+      font-family: $roboto;
+      font-size: 1em;
+      align-self: center;
+      @include breakpoint(laptop) {
+        font-size: 1.5em;
+      }
+    }
+  }
+  &__right {
+    margin-top: 5em;
+    width: 16em;
+    display: grid;
+    grid-template-rows: repeat(3, 20em);
+    gap: 1em;
+    @include breakpoint(phablet) {
+      grid-template-columns: 15em;
+      margin-top: 0;
+    }
+
+    @include breakpoint(laptop) {
+      width: 35em;
+      grid-template-columns: 30em;
+      grid-template-rows: repeat(3, 32em);
+      align-items: center;
+    }
+    @include breakpoint(desktop) {
+    }
+
+    img {
+      width: 16em;
+      align-self: center;
+      @include breakpoint(laptop) {
+        justify-self: center;
+        width: 22em;
+      }
+    }
+    p {
+      color: $dark;
+      font-family: $roboto;
+      font-size: 1em;
+      align-self: center;
+      @include breakpoint(laptop) {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
