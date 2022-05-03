@@ -29,7 +29,6 @@ export const getProductById = async (req, res) => {
     const product = await Products.findById(req.params.id);
 
     res.status(200).send(product);
-    console.log(product);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
