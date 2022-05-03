@@ -8,7 +8,6 @@ export const AppPagination = ({ page }) => {
   const dispatch = useDispatch();
   const { numberOfPages } = useSelector((state) => state.products);
 
-  console.log(page);
   useEffect(() => {
     if (page) dispatch(getProducts(page));
   }, [dispatch, page]);
@@ -16,7 +15,7 @@ export const AppPagination = ({ page }) => {
   return (
     <Pagination
       page={Number(page) || 1}
-      count={numberOfPages}
+      count={numberOfPages || 1}
       variant='outlined'
       shape='rounded'
       renderItem={(item) => (

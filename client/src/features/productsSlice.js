@@ -3,6 +3,7 @@ import productsService from '../services/productsService';
 
 const initialState = {
   products: [],
+  product: {},
   currentPage: 1,
   numberOfPages: null,
   isLoading: false,
@@ -16,6 +17,18 @@ export const getProducts = createAsyncThunk(
   async (page, { rejectWithValue }) => {
     try {
       return await productsService.getAll(page);
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+//Get product by id
+export const getProductById = createAsyncThunk(
+  'products/getProductById',
+  async (id, { rejectWithValue }) => {
+    try {
+      return await productsService.getProductById(id);
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -40,6 +53,20 @@ const productsSlice = createSlice({
       state.isSuccess = false;
       state.isError = action.payload;
       state.products = null;
+    },
+    [getProductById.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getProductById.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+      state.product = action.payload;
+    },
+    [getProductById.rejected]: (state, action) => {
+      state.isSuccess = false;
+      state.isError = true;
+      state.message = action.payload;
+      state.product = null;
     },
   },
 });

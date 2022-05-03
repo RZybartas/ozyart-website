@@ -2,14 +2,22 @@ import Products from '../models/products.js';
 
 //Get all products
 export const getProducts = async (req, res) => {
-  const options = {
-    limit: parseInt(req.query.limit, 10) || 10,
-    page: parseInt(req.query.page, 10) || 1,
-    sort: { createdAt: -1, updatedAt: -1 },
-  };
+  const { page } = req.query;
+
   try {
-    const products = await Products.paginate({}, options);
-    res.status(200).json(products);
+    const limit = 8;
+    const startIndex = (Number(page) - 1) * limit;
+    const total = await Products.countDocuments({});
+    const products = await Products.find()
+      .sort({ createdAt: -1, updatedAt: -1 })
+      .limit(limit)
+      .skip(startIndex);
+    res.status(200).json({
+      data: products,
+      currentPage: Number(page),
+      totalProducts: total,
+      numberOfPages: Math.ceil(total / limit),
+    });
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
