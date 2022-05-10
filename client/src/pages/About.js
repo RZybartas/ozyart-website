@@ -7,7 +7,7 @@ export const About = () => {
       <div className='about__container'>
         <section className='about__left'>
           <img
-            src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1651560205/jtmnzmpdh96odihksnyh.jpg'
+            src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1652172783/wz7mmu1amnewnoziu6se.jpg'
             alt='about-1'
           />
 
@@ -21,7 +21,8 @@ export const About = () => {
             norinčią kurti ir nuspalvoti pasaulį.
           </p>
           <img
-            src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1651560789/qmhzqwfie7orp2bwmw1e.jpg'
+            className='img-2'
+            src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1652172774/cwt5cmkikifggdbhzuk8.jpg'
             alt='about-2'
           />
         </section>
