@@ -2,10 +2,10 @@ import { Helmet } from 'react-helmet-async';
 import { LeftHome } from '../components/LeftHome';
 import { RightHome } from '../components/RightHome';
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
-      <Helmet></Helmet>
+      <Helmet title='Ozyart - Pagrindinis' />
       <div className='home-title'>
         <h1>
           Modernūs paveikslai<span>jūsų namams</span>
@@ -19,3 +19,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

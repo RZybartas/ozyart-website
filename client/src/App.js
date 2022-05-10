@@ -1,12 +1,17 @@
+import { lazy, Suspense } from 'react';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
-import { About } from './pages/About';
-import { Contacts } from './pages/Contacts';
-import { Home } from './pages/Home';
-import { NotFound } from './pages/NotFound';
-import { Product } from './pages/Product';
-import { Products } from './pages/Products';
+import { Spinner } from './components/Spinner';
+
+const Home = lazy(() => import('./pages/Home'));
+const Products = lazy(() => import('./pages/Products'));
+const Product = lazy(() => import('./pages/Product'));
+const About = lazy(() => import('./pages/About'));
+const Contacts = lazy(() => import('./pages/Contacts'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   return (
@@ -14,12 +19,54 @@ function App() {
       <Sidebar />
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
-        <Route path='/products/:id' element={<Product />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contacts' element={<Contacts />} />
-        <Route path='*' element={<NotFound />} />
+        <Route
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Home />
+            </Suspense>
+          }
+          path='/'
+        />
+        <Route
+          path='/products'
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Products />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/products/:id'
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Product />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/about'
+          element={
+            <Suspense fallback={<Spinner />}>
+              <About />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/contacts'
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Contacts />
+            </Suspense>
+          }
+        />
+        <Route
+          path='*'
+          element={
+            <Suspense fallback={<Spinner />}>
+              <NotFound />
+            </Suspense>
+          }
+        />
       </Routes>
     </Router>
   );

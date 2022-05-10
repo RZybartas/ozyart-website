@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getProductById } from '../features/productsSlice';
 
-export const Product = () => {
+const Product = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { product } = useSelector((state) => state.products);
@@ -18,6 +19,8 @@ export const Product = () => {
 
   return (
     <>
+      <Helmet title={`Ozyart -  ${title}`} />
+
       <div className='product' key={_id}>
         <h3 className='product__title'>{title}</h3>
         <div className='product__content'>
@@ -32,3 +35,5 @@ export const Product = () => {
     </>
   );
 };
+
+export default Product;
