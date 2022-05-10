@@ -16,7 +16,7 @@
   &__title {
     color: $dark;
     margin: 1em 0;
-    font-family: $lobster-font;
+    font-family: $syne-font;
     font-size: 2.5em;
     font-weight: bolder;
     text-align: center;
@@ -33,12 +33,13 @@
     width: 100%;
     margin: 0 auto;
     @include breakpoint(tablet) {
-      width: 50em;
+      width: 44em;
       display: grid;
+      margin: 0 auto;
       grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
     }
     @include breakpoint(laptop) {
-      width: 80em;
+      width: 70em;
       grid-template-columns: repeat(auto-fit, minmax(23em, 1fr));
     }
     @include breakpoint(desktop) {
@@ -46,9 +47,9 @@
       grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
     }
   }
-}
-.css-1oj2twp-MuiPagination-root {
-  display: flex;
-  justify-content: center;
-  padding: 2em 0;
+  .css-wjh20t-MuiPagination-ul {
+    width: 15em;
+    margin: auto;
+    height: 5em;
+  }
 }

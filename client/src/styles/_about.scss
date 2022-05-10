@@ -1,13 +1,12 @@
 .about {
   &__title {
     color: $dark;
-    font-family: $lobster-font;
-    font-size: 2.5em;
-    font-weight: bolder;
+    font-family: $syne-font;
+    font-size: 2em;
     text-align: center;
     margin-top: 1em;
     @include breakpoint(tablet) {
-      font-size: 3.5em;
+      font-size: 3em;
     }
     @include breakpoint(laptop) {
       font-size: 4.5em;

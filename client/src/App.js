@@ -11,8 +11,8 @@ import { Products } from './pages/Products';
 function App() {
   return (
     <Router>
-      <Header />
       <Sidebar />
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />

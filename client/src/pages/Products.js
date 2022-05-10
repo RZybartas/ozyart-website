@@ -25,7 +25,7 @@ export const Products = () => {
           ))
         )}
       </div>
-      <AppPagination page={page} />
+      <AppPagination page={page} className='products__pagination' />
     </div>
   );
 };

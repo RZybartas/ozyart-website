@@ -49,6 +49,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      max-height: 35em;
       @include breakpoint(phablet) {
         width: 30em;
       }
@@ -57,7 +58,6 @@
       }
       @include breakpoint(laptop) {
         width: 45em;
-        max-height: 48em;
       }
       @include breakpoint(desktop) {
         width: 60em;
@@ -73,12 +73,12 @@
     font-family: $roboto;
     font-weight: normal;
     margin-top: 0.5em;
-    font-size: 1.5em;
+    font-size: 1em;
     color: $dark;
   }
 
   button {
-    margin-top: 2em;
+    margin: 2em 0;
     background-color: $white;
     padding: 0.5em 2em;
     font-size: 1em;

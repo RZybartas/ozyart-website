@@ -1,50 +1,21 @@
 .header {
   background-color: $white;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  height: 2.5em;
-  margin-top: 0.5em;
+  height: 3em;
+  max-width: 100%;
   @include breakpoint(phablet) {
     height: 4em;
-    margin-top: 0.5em;
-  }
-
-  @include breakpoint(desktop) {
-    height: 7.5em;
-  }
-
-  &__container {
-    @include flex-center;
-    max-width: 20em;
-    padding: 1em 0;
-    margin: 0 auto;
-    height: 2.5em;
-    @include breakpoint(phablet) {
-      height: 4em;
-      margin-top: 2em;
-    }
-
-    @include breakpoint(laptop) {
-      margin-top: 1.5em;
-    }
-
-    @include breakpoint(desktop) {
-      height: 7.5em;
-    }
   }
 
   &__logo {
-    width: 2.5em;
+    width: 2em;
+    margin-left: 2em;
     filter: invert(50%) sepia(11%) saturate(315%) hue-rotate(347deg)
       brightness(98%) contrast(91%);
     @include breakpoint(phablet) {
-      width: 4em;
-    }
-
-    @include breakpoint(laptop) {
-      width: 5em;
-    }
-    @include breakpoint(desktop) {
-      width: 7em;
+      width: 3em;
     }
   }
 }

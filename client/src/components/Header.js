@@ -1,13 +1,18 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar } from './Navbar';
+
 export const Header = () => {
   return (
-    <header className='header'>
-      <div className='header__container'>
+    <div className='header'>
+      <Link to='/'>
         <img
+          className='header__logo'
           src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1651598058/kzxevp8wfnxcjfie4vs5.svg'
           alt='ozyart-logo'
-          className='header__logo'
         />
-      </div>
-    </header>
+      </Link>
+      <Navbar />
+    </div>
   );
 };
