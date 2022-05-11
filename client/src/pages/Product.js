@@ -19,8 +19,6 @@ const Product = () => {
 
   return (
     <>
-      <Helmet title={`Ozyart -  ${title}`} />
-
       <div className='product' key={_id}>
         <h3 className='product__title'>{title}</h3>
         <div className='product__content'>

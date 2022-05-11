@@ -14,7 +14,17 @@ const Products = () => {
 
   return (
     <>
-      <Helmet title='Ozyart - Galerija' />
+      <Helmet>
+        <title>Ozyart - Galerija</title>
+        <link rel='canonical' href='https://ozyart.lt' />
+        <meta
+          name='description'
+          content='Modernūs paveikslai jūsų namams ant drobės.Išskirtiniai paveikslai tapyti akrilu. '
+        />
+        <meta property='og:url' url='https://ozyart.lt' />
+        <meta property='og:title' content='Ozyart' />
+        <meta name='robots' content='noindex,nofollow'></meta>
+      </Helmet>
       <div className='products'>
         <div className='products__title'>Paveikslų galerija</div>
         <div className='products__container'>
@@ -28,7 +38,7 @@ const Products = () => {
             ))
           )}
         </div>
-        <AppPagination page={page} className='products__pagination' />
+        <AppPagination page={page} />
       </div>
     </>
   );

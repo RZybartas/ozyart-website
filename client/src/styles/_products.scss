@@ -1,7 +1,7 @@
 .products {
   max-width: 23em;
-  margin: 0 auto;
-  height: calc(100vh - 7.5em);
+  height: 100vh;
+  margin: 2em auto;
 
   @include breakpoint(tablet) {
     max-width: 50em;
@@ -31,7 +31,9 @@
   }
   &__container {
     width: 100%;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @include breakpoint(tablet) {
       width: 44em;
       display: grid;
@@ -47,9 +49,9 @@
       grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
     }
   }
-  .css-wjh20t-MuiPagination-ul {
-    width: 15em;
-    margin: auto;
-    height: 5em;
-  }
+}
+.MuiPagination-root {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2em;
 }

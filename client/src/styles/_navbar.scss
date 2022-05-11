@@ -1,10 +1,25 @@
 .navbar {
-  float: right;
   z-index: 3;
+  .css-i4bv87-MuiSvgIcon-root {
+    font-size: 1.2em;
+    margin-right: 1em;
+  }
+  .menu {
+    color: $dark;
+    font-size: 2em;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+  }
 
-  .menu-icon {
-    margin-right: 2em;
-    .menu {
+  .closed {
+    color: $dark;
+    cursor: pointer;
+    display: flex;
+    margin-top: 0.7em;
+    justify-content: flex-end;
+    width: 100%;
+    .close {
       color: $dark;
       font-size: 2em;
       display: flex;
@@ -13,41 +28,35 @@
     }
   }
   .slider {
+    float: right;
     position: fixed;
     width: 100%;
-    height: 100vh;
     top: 0;
-    right: -100%;
-    background-color: rgb(135, 126, 118, 0.9);
-    transition: 1s ease-in-out;
-
-    .closed {
-      color: $white;
-      cursor: pointer;
-      display: flex;
-      margin: 2em 0;
-      justify-content: flex-start;
-      width: 100%;
-      .close {
-        font-size: 3em;
-      }
-    }
+    height: 100vh;
+    left: -100%;
+    background-color: $white;
 
     ul {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-left: 1em;
 
       li {
-        margin-block: 1em;
-        margin-top: 2em;
         list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 1em 0 1em;
+        border-bottom: 1px solid $dark;
+
+        &:hover {
+          background-color: darken($color: $white, $amount: 5);
+        }
 
         a {
           text-decoration: none;
-          color: $white;
-          font-size: 2em;
+          display: flex;
+          align-items: center;
+          color: $dark;
+          font-size: 1.5em;
           text-transform: uppercase;
           cursor: pointer;
           font-family: $roboto;
@@ -55,23 +64,49 @@
       }
     }
   }
-
-  .open {
+  .slider.open {
     position: fixed;
-    right: 0;
-    transition: 1s ease-in-out;
+    width: 100%;
+    left: 0;
+  }
+  &__social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    h3 {
+      color: $dark;
+      font-weight: normal;
+      font-family: $roboto;
+      margin-bottom: 0.3em;
+    }
+    a {
+      color: $dark;
+      font-size: 1.5em;
+      width: 1em;
+      margin: 0.2em;
+      .css-i4bv87-MuiSvgIcon-root {
+        margin: 0;
+      }
+    }
   }
 }
 
 @media (min-width: 50em) {
   .navbar {
     width: 80%;
+
+    .css-i4bv87-MuiSvgIcon-root {
+      display: none;
+    }
     .menu-icon {
       display: none;
     }
     .slider {
       position: static;
       right: 0;
+      top: 0;
       background-color: transparent;
       display: flex;
       justify-content: flex-end;
@@ -84,12 +119,15 @@
       }
 
       ul {
-        width: auto;
         display: flex;
         flex-direction: row;
 
         li {
           margin: 0 1em 0 0;
+          border: none;
+          &:hover {
+            background-color: darken($color: $white, $amount: 5);
+          }
 
           a {
             text-decoration: none;
@@ -101,6 +139,9 @@
           }
         }
       }
+    }
+    &__social-container {
+      display: none;
     }
   }
 }
