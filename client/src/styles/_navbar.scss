@@ -1,22 +1,25 @@
 .navbar {
   z-index: 3;
-  .css-i4bv87-MuiSvgIcon-root {
+  .MuiSvgIcon-root {
     font-size: 1.2em;
     margin-right: 1em;
   }
-  .menu {
-    color: $dark;
-    font-size: 2em;
-    display: flex;
-    align-self: center;
-    cursor: pointer;
+  .menu-icon {
+    margin-right: 1em;
+    .menu {
+      color: $dark;
+      font-size: 2em;
+      display: flex;
+      align-self: center;
+      cursor: pointer;
+    }
   }
 
   .closed {
     color: $dark;
     cursor: pointer;
     display: flex;
-    margin-top: 0.7em;
+    margin-top: 1.2em;
     justify-content: flex-end;
     width: 100%;
     .close {
@@ -97,7 +100,7 @@
   .navbar {
     width: 80%;
 
-    .css-i4bv87-MuiSvgIcon-root {
+    .MuiSvgIcon-root {
       display: none;
     }
     .menu-icon {
@@ -121,6 +124,8 @@
       ul {
         display: flex;
         flex-direction: row;
+        height: 4em;
+        margin-right: 1em;
 
         li {
           margin: 0 1em 0 0;

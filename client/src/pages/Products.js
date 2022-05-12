@@ -21,7 +21,7 @@ const Products = () => {
           name='description'
           content='Modernūs paveikslai jūsų namams ant drobės.Išskirtiniai paveikslai tapyti akrilu. '
         />
-        <meta property='og:url' url='https://ozyart.lt' />
+        <meta property='og:url' content='https://ozyart.lt' />
         <meta property='og:title' content='Ozyart' />
         <meta name='robots' content='noindex,nofollow'></meta>
       </Helmet>

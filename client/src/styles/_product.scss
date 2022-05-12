@@ -51,16 +51,16 @@
       align-items: center;
       max-height: 35em;
       @include breakpoint(phablet) {
-        width: 30em;
+        max-width: 30em;
       }
       @include breakpoint(tablet) {
-        width: 20em;
+        width: auto;
       }
       @include breakpoint(laptop) {
-        width: 45em;
+        max-width: 60em;
       }
       @include breakpoint(desktop) {
-        width: 60em;
+        max-height: 55em;
       }
     }
   }

@@ -5,10 +5,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Spinner } from './components/Spinner';
+import Product from './pages/Product';
 
 const Home = lazy(() => import('./pages/Home'));
 const Products = lazy(() => import('./pages/Products'));
-const Product = lazy(() => import('./pages/Product'));
 const About = lazy(() => import('./pages/About'));
 const Contacts = lazy(() => import('./pages/Contacts'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -35,14 +35,7 @@ function App() {
             </Suspense>
           }
         />
-        <Route
-          path='/products/:id'
-          element={
-            <Suspense fallback={<Spinner />}>
-              <Product />
-            </Suspense>
-          }
-        />
+        <Route path='/products/:id' element={<Product />} />
         <Route
           path='/about'
           element={
