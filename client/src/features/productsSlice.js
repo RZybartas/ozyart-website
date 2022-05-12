@@ -4,7 +4,7 @@ import productsService from '../services/productsService';
 const initialState = {
   products: [],
   product: {},
-  currentPage: 0,
+  currentPage: 1,
   numberOfPages: null,
   isLoading: false,
   isSuccess: false,
