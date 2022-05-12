@@ -5,13 +5,13 @@ export const getProducts = async (req, res) => {
   const { page } = req.query;
 
   try {
-    const limit = 8;
+    const limit = 12;
     const startIndex = (Number(page) - 1) * limit;
     const total = await Products.countDocuments({});
     const products = await Products.find()
-      .sort({ createdAt: -1, updatedAt: -1 })
       .limit(limit)
-      .skip(startIndex);
+      .skip(startIndex)
+      .sort({ createdAt: -1, updatedAt: -1 });
     res.status(200).json({
       data: products,
       currentPage: Number(page),
