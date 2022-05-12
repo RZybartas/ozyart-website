@@ -19,10 +19,12 @@
     color: $dark;
     cursor: pointer;
     display: flex;
-    margin-top: 1.2em;
+    margin-right: 1.7em;
+    height: 100%;
     justify-content: flex-end;
     width: 100%;
     .close {
+      margin-top: 0.8em;
       color: $dark;
       font-size: 2em;
       display: flex;
@@ -42,12 +44,14 @@
     ul {
       display: flex;
       flex-direction: column;
+      align-items: center;
 
       li {
         list-style: none;
         display: flex;
         align-items: center;
         margin: 1em 0 1em;
+        width: 100%;
         border-bottom: 1px solid $dark;
 
         &:hover {
@@ -68,8 +72,8 @@
     }
   }
   .slider.open {
-    position: fixed;
-    width: 100%;
+    position: block;
+
     left: 0;
   }
   &__social-container {
@@ -114,7 +118,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      height: 4em;
+      height: 2em;
       transition: none;
 
       .close {
@@ -124,7 +128,6 @@
       ul {
         display: flex;
         flex-direction: row;
-        height: 4em;
         margin-right: 1em;
 
         li {

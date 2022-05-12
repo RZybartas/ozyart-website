@@ -23,8 +23,8 @@ export const Navbar = () => {
       <div className='menu-icon'>
         <MenuOutlined className='menu' onClick={showMenu} />
       </div>
-      <nav className={active ? 'slider open' : 'slider'} onClick={showMenu}>
-        <ul>
+      <nav className={active ? 'slider open' : 'slider'}>
+        <ul onClick={showMenu}>
           <div className='closed'>
             <Close className='close' />
           </div>
