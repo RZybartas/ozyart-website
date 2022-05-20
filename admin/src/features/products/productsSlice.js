@@ -4,9 +4,9 @@ import productsService from '../../services/productsService';
 //Get all products
 export const getProducts = createAsyncThunk(
   'products/getProducts',
-  async (_, { rejectWithValue }) => {
+  async (page, { rejectWithValue }) => {
     try {
-      return await productsService.getAllProducts();
+      return await productsService.getAllProducts(page);
     } catch (error) {
       const message =
         (error.response &&
@@ -21,6 +21,7 @@ export const getProducts = createAsyncThunk(
 
 const initialState = {
   products: [],
+  totalProducts: null,
   isLoading: false,
   isSuccess: false,
   isError: false,
@@ -32,6 +33,7 @@ const productsSlice = createSlice({
   initialState,
   reducers: {
     productsReset: (state) => {
+      state.products = [];
       state.isLoading = false;
       state.isSuccess = false;
       state.isError = false;
@@ -45,7 +47,8 @@ const productsSlice = createSlice({
     [getProducts.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.isSuccess = true;
-      state.products = action.payload;
+      state.products = action.payload.data;
+      state.totalProducts = action.payload.totalProducts;
     },
     [getProducts.rejected]: (state, action) => {
       state.isSuccess = false;

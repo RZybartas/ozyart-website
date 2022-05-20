@@ -51,7 +51,7 @@ export const Login = () => {
     }
 
     if (isSuccess || user) {
-      navigate('/');
+      // navigate('/');
     }
 
     dispatch(reset);

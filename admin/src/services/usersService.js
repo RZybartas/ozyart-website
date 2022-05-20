@@ -3,8 +3,11 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_BASE_URL;
 
 //Get all users
-const getAllUsers = async () => {
-  const res = await axios.get(API_URL + '/users');
+const getAllUsers = async (token) => {
+  const res = await axios.get(API_URL + '/users', {
+    method: 'GET',
+    headers: { authorization: `Bearer ${token}` },
+  });
 
   return res.data;
 };

@@ -1,12 +1,12 @@
 import { DataGrid } from '@mui/x-data-grid';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Sidebar } from '../components/Sidebar';
+import { getAllUsers } from '../features/users/usersSlice';
 
 const columns = [
-  { field: '_id', headerName: 'ID', width: 210 },
-  { field: 'username', headerName: 'Username', width: 150 },
-  { field: 'email', headerName: 'Email', width: 250 },
+  { field: '_id', headerName: 'ID', width: 250 },
+  { field: 'username', headerName: 'Username', width: 250 },
   {
     field: 'createdAt',
     headerName: 'Created',
@@ -22,13 +22,20 @@ const columns = [
   {
     field: 'updatedAt',
     headerName: 'Updated',
-    width: 120,
+    width: 220,
   },
 ];
 
 export const Users = () => {
+  const { user } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.users);
   const [pageSize, setPageSize] = useState(10);
+  const dispatch = useDispatch();
+  const token = user?.token;
+
+  useEffect(() => {
+    dispatch(getAllUsers(token));
+  }, [dispatch, token]);
 
   return (
     <div className='users'>
@@ -48,7 +55,7 @@ export const Users = () => {
               rowsPerPageOptions={[10, 25, 50]}
             />
           ) : (
-            <h2 className='users__message'>Sorry, you don't have permision</h2>
+            <h2 className='users__message'>Sorry, you don't have permission</h2>
           )}
         </div>
       </section>

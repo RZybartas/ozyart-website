@@ -14,8 +14,9 @@ export const Dashboard = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { users } = useSelector((state) => state.users);
-  const { products } = useSelector((state) => state.products);
+  const { products, totalProducts } = useSelector((state) => state.products);
   const token = user?.token;
+  console.log(totalProducts);
 
   useEffect(() => {
     dispatch(getAllUsers(token));
@@ -43,7 +44,7 @@ export const Dashboard = () => {
           <Widget
             key={4}
             name='products'
-            count={products ? products.length : '0'}
+            count={products ? totalProducts : 'No products'}
             links={'/products'}
             icons={<StoreIcon className='dashboard__icon' />}
           />

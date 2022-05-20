@@ -11,7 +11,7 @@
     color: $secondary;
     display: flex;
     justify-content: center;
-    font-family: $lobster-font;
+    font-family: $roboto;
     font-size: 4em;
   }
   &__message {
@@ -22,7 +22,7 @@
   }
   &__table {
     margin: 0 auto;
-    height: 90%;
+    height: 41em;
     padding: 1em;
     max-width: 75em;
   }

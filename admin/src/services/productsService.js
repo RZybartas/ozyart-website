@@ -5,8 +5,7 @@ const API_URL = process.env.REACT_APP_BASE_URL;
 //Getting all products from database
 
 const getAllProducts = async () => {
-  const res = await axios.get(API_URL + '/products');
-
+  const res = await axios.get(API_URL + `/products`);
   return res.data;
 };
 

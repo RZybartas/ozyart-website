@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { DataGrid } from '@mui/x-data-grid';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+
 import { Sidebar } from '../components/Sidebar';
+import { getProducts } from '../features/products/productsSlice';
 
 const columns = [
   { field: '_id', headerName: 'ID', width: 210 },
@@ -49,9 +52,13 @@ const columns = [
 ];
 
 export const Products = () => {
+  const [pageSize, setPageSize] = useState(16);
+  const dispatch = useDispatch();
   const { products } = useSelector((state) => state.products);
-  const [pageSize, setPageSize] = useState(10);
 
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
   return (
     <div className='products'>
       <div className='products__sidebar'>
@@ -60,14 +67,18 @@ export const Products = () => {
       <section className='products__wrapper'>
         <h1 className='products__title'>Products</h1>
         <div className='table'>
-          <DataGrid
-            getRowId={(row) => row._id}
-            rows={products}
-            columns={columns}
-            pageSize={pageSize}
-            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-            rowsPerPageOptions={[10, 25, 50]}
-          />
+          {products ? (
+            <DataGrid
+              getRowId={(row) => row._id}
+              rows={products}
+              columns={columns}
+              pageSize={pageSize}
+              onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+              rowsPerPageOptions={[16, 32, 48]}
+            />
+          ) : (
+            <h2 className='users__message'>Sorry, no products</h2>
+          )}
         </div>
       </section>
     </div>
