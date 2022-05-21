@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Navbar } from './components/Navbar';
+import { AddProduct } from './pages/AddProduct';
 import { Dashboard } from './pages/Dashboard';
 import { Login } from './pages/Login';
 import { NotFound } from './pages/NotFound';
@@ -36,6 +37,14 @@ const App = () => {
             element={
               <PrivateRoute>
                 <Products />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/add'
+            element={
+              <PrivateRoute>
+                <AddProduct />
               </PrivateRoute>
             }
           />

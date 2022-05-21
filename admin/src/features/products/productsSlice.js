@@ -19,6 +19,17 @@ export const getProducts = createAsyncThunk(
   }
 );
 
+export const newProduct = createAsyncThunk(
+  'products/newProduct',
+  async (product, { rejectWithValue }) => {
+    try {
+      return await productsService.addProduct(product);
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 const initialState = {
   products: [],
   totalProducts: null,
@@ -55,6 +66,18 @@ const productsSlice = createSlice({
       state.isError = true;
       state.message = action.payload;
       state.products = null;
+    },
+    [newProduct.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [newProduct.fulfilled]: (state) => {
+      state.isLoading = false;
+      state.isSuccess = true;
+    },
+    [newProduct.rejected]: (state, action) => {
+      state.isSuccess = false;
+      state.isError = true;
+      state.message = action.payload.message;
     },
   },
 });

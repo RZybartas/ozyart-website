@@ -16,7 +16,6 @@ export const Dashboard = () => {
   const { users } = useSelector((state) => state.users);
   const { products, totalProducts } = useSelector((state) => state.products);
   const token = user?.token;
-  console.log(totalProducts);
 
   useEffect(() => {
     dispatch(getAllUsers(token));

@@ -15,9 +15,21 @@ const getProductById = async (id) => {
   return res.data;
 };
 
+//Add Product
+const addProduct = async (product) => {
+  const [token, productData] = product;
+
+  const res = await axios.post(API_URL + '/products', productData, {
+    method: 'POST',
+    headers: { authorization: `Bearer ${token}` },
+  });
+  return res.data;
+};
+
 const productsService = {
   getAllProducts,
   getProductById,
+  addProduct,
 };
 
 export default productsService;

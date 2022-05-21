@@ -1,0 +1,25 @@
+.field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  label {
+    margin: 0.5em 0 0 0.5em;
+    font-size: 1.5em;
+    color: $secondary;
+  }
+
+  .control {
+    width: 70%;
+
+    .input {
+      width: 95%;
+      padding: 0.5em 0;
+      margin: 1em 0.5em 0 0;
+      border: none;
+      border-bottom: 1px solid $secondary;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}

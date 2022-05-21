@@ -90,6 +90,7 @@ export const Register = () => {
           value={email}
           onChange={onChange}
           autoComplete='off'
+          required
         />
 
         <input
@@ -99,6 +100,7 @@ export const Register = () => {
           placeholder='Password'
           value={password}
           onChange={onChange}
+          required
         />
 
         <input
@@ -108,6 +110,7 @@ export const Register = () => {
           placeholder='Repeat password'
           value={password2}
           onChange={onChange}
+          requi
         />
 
         <button className='auth__btn'>Register</button>

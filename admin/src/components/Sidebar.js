@@ -6,6 +6,7 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import AddIcon from '@mui/icons-material/Add';
 import { useDispatch } from 'react-redux';
 import { logout, reset } from '../features/auth/authSlice';
 import { productsReset } from '../features/products/productsSlice';
@@ -44,6 +45,12 @@ export const Sidebar = () => {
               <Link to='/products'>
                 <StoreIcon className='icons' />
                 Products
+              </Link>
+            </li>
+            <li className='sidebar__list-item'>
+              <Link to='/add'>
+                <AddIcon className='icons' />
+                Add Product
               </Link>
             </li>
             <li className='sidebar__list-item'>
