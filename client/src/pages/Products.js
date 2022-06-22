@@ -9,7 +9,7 @@ import { Helmet } from 'react-helmet-async';
 const Products = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
-  const page = parseInt(query.get('page') || '0');
+  const page = parseInt(query.get('page') || '1');
   const { products, isLoading } = useSelector((state) => state.products);
 
   return (

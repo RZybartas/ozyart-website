@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_BASE_URL;
 //Get all products
 const getAll = async (page) => {
-  const res = await axios.get(API_URL + `/products?page=${page}`);
+  const res = await axios.get(API_URL + `/products?page=${page}&limit=${12}`);
   return res.data;
 };
 
