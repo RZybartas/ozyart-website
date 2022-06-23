@@ -37,7 +37,7 @@ const About = () => {
               mano tuo metu esančios nuotaikos.
             </p>
             <img
-              src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1651561219/gafehdrnbub8sdjdqwe6.jpg'
+              src='https://res.cloudinary.com/dl8kybvwx/image/upload/v1655885490/ukxcyz4clxaowsx9lfel.jpg'
               alt='about-3'
             />
             <p>
